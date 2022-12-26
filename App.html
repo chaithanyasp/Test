@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="App.css">
+    <title>TIP Calculator</title>
+</head>
+<body>
+<div class="container">
+    <h1>TIP Calculator</h1>
+
+<p>Bill</p>
+<input type="text" id="amount" placeholder="$">
+<p>Select Tips</p>
+<select id="service">
+    <option >Select</option>
+    <option value="0.5">5%</option>
+    <option value="0.10">10%</option>
+    <option value="0.15">15%</option>
+    <option value="0.25">25%</option>
+    <option value="0.50">50%</option>
+</select>
+
+<p>Total number of Person</p>
+<input type="text" id="persons" placeholder="people">
+<button id="calculator">Calculate</button>
+<!-- <div class="tip">
+<p>Tip Amount</p>
+<span id="total">0</span>$<span id="each">Each</span>
+</div>
+<div>
+<p>Total</p>
+<span id="total">0</span>$<span id="each">Each</span>
+<button>Reset</button>
+</div> -->
+</div>
+    <div class="tip">
+        <p><strong>Tip:&nbsp;<span id="tip"></span></strong></p>
+        <p><strong>Total:&nbsp;<span id="total"></span></strong></p>
+        <button id="Reset">Reset</button>
+    </div>
+</body>
+
+<script>
+    window.onload=()=>{
+        document.querySelector('#calculator').onclick=calculateTip;
+    }
+    function calculateTip(){
+        let amount = document.querySelector('#amount').value;
+        let persons = document.querySelector('#persons').value;
+        let service = document.querySelector('#service').value;
+        console.log(service);
+
+    if(amount ===' ' && service ==='select'){
+        alert('Please enter valid values');
+        return;
+    }
+    // if(persons === '1'){
+    //     document.querySelector('#each').style.display = 'none';
+    // }
+    // else{
+    //     document.querySelector('#each').style.display = 'block'; 
+else{
+    
+   
+    let tip = ((amount * service) /100)/persons;
+    document.querySelector('#tip').innerHTML = tip.toFixed(2);
+    let total = (tip + amount);
+    document.querySelector('#total').innerHTML=total;
+    document.querySelector('#Reset').reset();
+}
+
+    }
+</script>
+</html>

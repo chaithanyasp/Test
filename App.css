@@ -1,0 +1,17 @@
+.body{
+    background-color: aquamarine;
+}
+.container{
+    height: 30px;
+    width: 400px;
+    background-color: azure;
+    margin: auto;
+
+}
+/* .tip{
+    display: flex;
+} */
+#service{
+    width: 100px;
+    height: 50px;
+}
